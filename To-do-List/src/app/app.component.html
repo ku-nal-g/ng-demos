@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<input type="text" #task>
+<button (click) = "addTask(task.value)">Add a Task</button>
+<br>
+<br>
+
+<ul>
+  <li *ngFor = "let item of list ; let i = index "(click) = removeTask(i)>{{item}}</li>
+</ul>
