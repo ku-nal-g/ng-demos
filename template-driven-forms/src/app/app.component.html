@@ -1,0 +1,82 @@
+<div class="container-fluid">
+
+  <div style="text-align: center;">
+  <h2>Sign Up</h2>
+  </div>
+
+  <form #signUp = "ngForm"> <!-- Template refernence variable-->
+
+    <div class="mb-3 mt-5">
+      <label class="form-label">First Name:</label>
+      <input type="text" required #fname="ngModel" name="firstname" class="form-control form-control-sm" placeholder="Enter first name..." ngModel>
+      <span *ngIf="fname.invalid && fname.touched" style="color: red;">Please enter a valid input</span>
+    </div>
+
+    <div class="mb-3 mt-2">
+      <label class="form-label">Last Name:</label>
+      <input type="text" required #lname="ngModel" name="lastname" class="form-control form-control-sm" placeholder="Enter last name..." ngModel>
+      <span *ngIf="lname.invalid && lname.touched" style="color: red;">Please enter valid input</span>
+    </div>
+
+    <div class="mb-3 mt-2">
+      <label class="form-label">Email:</label>
+      <input type="email" required #email="ngModel" name="email" class="form-control form-control-sm" placeholder="Enter email..." ngModel>
+      <span *ngIf="email.invalid && email.touched" style="color: red;">Please enter valid email</span>
+    </div>
+
+    <div class="mb-3 mt-2">
+      <label class="form-label">Password:</label>
+      <input type="text" required #pd="ngModel" minlength="6" name="password" class="form-control form-control-sm" placeholder="Enter password..." ngModel>
+      <span *ngIf="pd.invalid && pd.touched" style="color: red;">Please enter password with atleast 6 digits</span>
+    </div>
+
+    <div class="mb-3 mt-2">
+      <label class="form-label">Date:</label>
+      <input type="date" required #date="ngModel" name="date" class="form-control form-control-sm" ngModel>
+      <span *ngIf="date.invalid && date.touched" style="color: red;">Please enter valid date</span>
+    </div>
+
+    <div class="mb-3 mt-2">
+      <label class="form-label">Time:</label>
+      <input type="time" required #time="ngModel" name="time" class="form-control form-control-sm" ngModel>
+      <span *ngIf="time.invalid && time.touched" style="color: red;">Please enter valid time</span>
+    </div>
+
+    <!-- Radio Buttons-->
+
+    <div class="mt-2 mb-3">
+      <label>Gender:</label>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" value="male" ngModel>
+      <label class="form-check-label" >Male</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" value="female" ngModel>
+      <label class="form-check-label" >female</label>
+     </div>
+
+     <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" value="others" ngModel>
+      <label class="form-check-label" >Others</label>
+     </div>
+
+  </div>
+
+  <!-- Drop down list-->
+
+  <div class="mt-2 mb-3">
+    <label class="form-custom-select">Platforms Used:</label>
+    <select class="form-select" name="platform" ngModel>
+      <option *ngFor="let platform of platforms" >
+        {{platform}}
+      </option>
+    </select>
+  </div>
+
+   <!-- Button-->
+  <div style="text-align: center;">
+<button [disabled]="signUp.invalid" type="button" class="btn btn-outline-dark" (click)="showUserData(signUp.value)">SignUp</button>
+</div>
+</form>
+</div>
