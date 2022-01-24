@@ -1,0 +1,68 @@
+<div style="text-align: center;">
+  <h1>{{title}}</h1>
+</div>
+
+
+<div class="centre-div mt-5">
+  <div style="text-align: center;"><h2>Sign-in</h2></div>
+
+<div class="container-fluid">
+  <form [formGroup]="loginForm">
+
+    <div class="mb-3">
+      <label class="form-label">First Name :</label>
+      <input type="text" class="form-control" placeholder="Enter first name..." formControlName='fname'>
+      <span style="color: red;" *ngIf="fname && fname.invalid && fname.touched">Enter valid input</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Last Name :</label>
+      <input type="text" class="form-control" placeholder="Enter last name..." formControlName='lname'>
+      <span style="color: red;" *ngIf="lname && lname.invalid && lname.touched">Enter valid input</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email :</label>
+      <input type="email" class="form-control" placeholder="Enter email ..." formControlName='email'>
+      <span style="color: red;" *ngIf="email && email.invalid && email.touched">Enter valid email</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password :</label>
+      <input type="password" class="form-control" formControlName='pd'>
+      <span style="color: red;" *ngIf="pd && pd.invalid && pd.touched">Enter valid password</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number :</label>
+      <input type="number" class="form-control" placeholder="Enter Phone ..." formControlName='phone'>
+      <span style="color: red;" *ngIf="phone && phone.invalid && phone.touched">Enter valid phone no</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Time of Login :</label>
+      <input type="time" class="form-control" formControlName='time'>
+      <span style="color: red;" *ngIf="time && time.invalid && time.touched">Enter valid time</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Place of Login :</label>
+      <input type="text" class="form-control" placeholder="Enter Place..." formControlName='place'>
+      <span style="color: red;" *ngIf="place && place.invalid && place.touched">Enter valid place</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Device type :</label> 
+    <select class="form-select" formControlName='device'>
+      <option *ngFor="let device of devicesList">{{device}}</option>
+    </select>
+    </div>
+ 
+    <div style="text-align: center;" class="mt-3 mb-2">
+      <button [disabled]="loginForm.invalid"  type="button" class="btn btn-outline-dark btn-lg" (click)="showUserInfo()">Login</button>
+    </div>
+
+
+  </form>
+</div>
+</div>
