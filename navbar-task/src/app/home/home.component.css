@@ -1,0 +1,14 @@
+.footer{
+    width:100%;
+    background-color: snow;
+    position: absolute;
+    bottom: 0;
+}
+.footer p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.design{
+    margin-left: 300px;
+}
