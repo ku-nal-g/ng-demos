@@ -1,0 +1,10 @@
+div ul li{
+    list-style-type: disc;
+
+}
+ul a{
+    color: blue;
+}
+ul a:hover{
+    color: black;
+}
