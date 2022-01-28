@@ -1,0 +1,49 @@
+  <!-- /d means matches [0-9]
+       /w means matches [single,letter,number or underscore]
+       /s matches whitespace character
+  -->
+  
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="box">
+      <h2 style="text-align: center;">User Detail Page</h2>
+
+    <form #logIn ="ngForm"> <!-- Template refernence variable-->
+
+      <!--Name input field Name is required, There should not be white spaces before and after the name-->
+  
+      <div class="mb-3 mt-5">
+        <label class="form-label">Name:</label>
+        <input type="text" required #name="ngModel" pattern="^[^\s].+[a-zA-Z]+[a-zA-Z]+$" name="userName" class="form-control" placeholder="Enter Name" ngModel>
+        <span *ngIf="name.invalid && name.touched" class="text-danger">Please enter valid name without using space in start and end</span>
+      </div>
+
+      <!--Email input field should be valid id.-->
+  
+      <div class="mb-3 mt-2">
+        <label class="form-label">Email:</label>
+        <input type="email" #email="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" placeholder="Enter email" ngModel>
+        <span *ngIf="email.invalid" class="text-danger">Please enter a valid email including alphanumeric digits and special symbols </span>
+      </div>
+
+      <!--password input field should be 8 characters in length, should include capital, small, and special characters, should not include white spaces.-->
+  
+      <div class="mb-3 mt-2">
+        <label class="form-label">Password:</label>
+        <input type="password" #pd="ngModel" name="password" pattern="^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{8,})" class="form-control" placeholder="Enter Password" ngModel>
+        <span *ngIf="pd.invalid" class="text-danger">Please enter valid password with alphanumeric digits and special symbols excluding whitespace </span>
+      </div>
+
+      <!--Phone number input field  should be 10 characters in length -->
+
+      <div class="mb-3 mt-2">
+        <label class="form-label">Phone:</label>
+        <input type="tel" #phn="ngModel" minlength="10" pattern="[0-9]+$" name="phone" class="form-control" placeholder="Enter Phone" ngModel>
+        <span *ngIf="phn.invalid" class="text-danger">Enter valid phone with 10 digits </span>
+      </div>
+  
+     <!-- Button-->
+  <button [disabled]="logIn.invalid" type="button" class="btn btn-primary mt-3 mb-2" (click)="showUserData(logIn.value)">Submit</button>
+  </form>
+  </div>
+  </div>
+

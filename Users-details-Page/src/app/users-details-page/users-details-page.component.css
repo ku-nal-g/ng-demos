@@ -1,0 +1,9 @@
+.box{
+    border: 1px solid wheat;
+    width: 50%;
+    background: snow;
+    padding: 30px;
+}
+.container-fluid{
+    margin-top: 50px;
+}
