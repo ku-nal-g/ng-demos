@@ -1,6 +1,6 @@
 # UsersDetailsPage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task was created on 28/01/2022 which is based on template driven approach.
 
 ## Development server
 
