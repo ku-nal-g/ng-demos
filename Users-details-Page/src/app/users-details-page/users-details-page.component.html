@@ -21,7 +21,7 @@
   
       <div class="mb-3 mt-2">
         <label class="form-label">Email:</label>
-        <input type="email" #email="ngModel" name="email" pattern="[a-zA-Z0-9]+@[a-z]+\.[a-z]+" class="form-control" placeholder="Enter email" ngModel>
+        <input type="email" #email="ngModel" name="email" pattern="[a-zA-Z0-9]+@.[a-z]+\.[a-z]+" class="form-control" placeholder="Enter email" ngModel>
         <span *ngIf="email.invalid" class="text-danger">Please enter a valid email including alphanumeric digits and special symbols </span>
       </div>
 
