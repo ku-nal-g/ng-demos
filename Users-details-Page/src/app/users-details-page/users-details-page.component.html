@@ -29,7 +29,7 @@
   
       <div class="mb-3 mt-2">
         <label class="form-label">Password:</label>
-        <input type="password" #pd="ngModel" name="password" pattern="^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{8})" class="form-control" placeholder="Enter Password" ngModel>
+        <input type="password" #pd="ngModel" name="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8})" class="form-control" placeholder="Enter Password" ngModel>
         <span *ngIf="pd.invalid" class="text-danger">Please enter valid password with alphanumeric digits and special symbols excluding whitespace </span>
       </div>
 
