@@ -1,7 +1,7 @@
 .box{
-    border: 1px solid wheat;
+    border: 1px solid black;
     width: 50%;
-    background: snow;
+    background: rgb(215,228,31);
     padding: 30px;
 }
 .container-fluid{
