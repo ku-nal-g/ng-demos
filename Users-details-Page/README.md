@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task was created on 28/01/2022 which is based on template driven approach.
 
+To run the project : 
+Download the angular project
+Unzip the project. Suppose, your angular project name is my-app.
+After Unzip, open the project folder.
+Press Shift + Mouse Right click on background
+You will see Open Powershel/Open Window Here on the popup Menu
+Write the command: npm install or npm i
+After installing npm, write the command: ng serve or ng serve -open or ng serve -o
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
