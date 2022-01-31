@@ -13,7 +13,7 @@
   
       <div class="mb-3 mt-5">
         <label class="form-label">Name:</label>
-        <input type="text" required #name="ngModel" pattern="^[^\s].+[a-zA-Z]+[a-zA-Z]+$" name="userName" class="form-control" placeholder="Enter Name" ngModel>
+        <input type="text" required #name="ngModel" pattern="\w+( {0}. \w+)*" name="userName" class="form-control" placeholder="Enter Name" ngModel>
         <span *ngIf="name.invalid && name.touched" class="text-danger">Please enter valid name without using space in start and end</span>
       </div>
 
@@ -21,7 +21,7 @@
   
       <div class="mb-3 mt-2">
         <label class="form-label">Email:</label>
-        <input type="email" #email="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" placeholder="Enter email" ngModel>
+        <input type="email" #email="ngModel" name="email" pattern="[a-zA-Z0-9]+.@.[a-z]+.\..[a-z]+$" class="form-control" placeholder="Enter email" ngModel>
         <span *ngIf="email.invalid" class="text-danger">Please enter a valid email including alphanumeric digits and special symbols </span>
       </div>
 
@@ -29,7 +29,7 @@
   
       <div class="mb-3 mt-2">
         <label class="form-label">Password:</label>
-        <input type="password" #pd="ngModel" name="password" pattern="^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{8,})" class="form-control" placeholder="Enter Password" ngModel>
+        <input type="password" #pd="ngModel" name="password" pattern="^((?!.*[\s])(?=.*[A-Z])(?=.*\d).{8,8})" class="form-control" placeholder="Enter Password" ngModel>
         <span *ngIf="pd.invalid" class="text-danger">Please enter valid password with alphanumeric digits and special symbols excluding whitespace </span>
       </div>
 
@@ -37,7 +37,7 @@
 
       <div class="mb-3 mt-2">
         <label class="form-label">Phone:</label>
-        <input type="tel" #phn="ngModel" minlength="10" pattern="[0-9]+$" name="phone" class="form-control" placeholder="Enter Phone" ngModel>
+        <input type="tel" #phn="ngModel" pattern="^\s*-?[0-9]{10,10}\s*$" name="phone" class="form-control" placeholder="Enter Phone" ngModel>
         <span *ngIf="phn.invalid" class="text-danger">Enter valid phone with 10 digits </span>
       </div>
   
