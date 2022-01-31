@@ -1,8 +1,7 @@
 .box{
-    border: 1px solid black;
     width: 50%;
-    background: rgb(215,228,31);
-    padding: 30px;
+    background: rgb(221,213,213);
+    padding: 20px;
 }
 .container-fluid{
     margin-top: 50px;
