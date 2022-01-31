@@ -1,0 +1,24 @@
+.container-fluid{
+    border: 1px solid aliceblue;
+    padding: 40px ;
+    width: 70%;
+    background-color: rgb(210, 208, 216);
+    border-radius: 25px;
+}
+.parent-div{
+    padding: 25px;
+    width: 90%;
+    margin-left: 60px;
+}
+.parent-div h2{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    margin-top: 6px;
+    color: black;
+}
+.btn:hover{
+    color: white;
+    background: black;
+}
