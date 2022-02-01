@@ -9,14 +9,16 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 export class AppComponent {
   title = 'users-details-page-reactive-form';
 
+  //Properties for two way binding to bind view and input field
+
   myName:string = "";
   myEmail:string = "";
   myPassword:string = "";
   myPhone:any;
 
-  loginForm = new FormGroup({
+  userDetailPage = new FormGroup({
     userName: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+( [A-Za-z]+)*')]),
-    email : new FormControl('',Validators.pattern('[a-zA-Z0-9]+@.[a-z]+\.[a-z]+')),
+    email : new FormControl('',Validators.pattern('[a-zA-Z0-9]+@.[a-z]+.\.+[a-z]+')),
     password: new FormControl('',Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8})')),
     phone: new FormControl('',Validators.pattern('[0-9]{10}')),
   });
@@ -24,21 +26,21 @@ export class AppComponent {
   // this method logs formcontrols value to console
 
   showUserData(){
-    console.warn(this.loginForm.value)
+    console.warn(this.userDetailPage.value)
   }
 
   // getter methods helps us to show error messages on template
 
   get userName(){
-    return this.loginForm.get('userName');
+    return this.userDetailPage.get('userName');
   }
   get email(){
-    return this.loginForm.get('email');
+    return this.userDetailPage.get('email');
   }
   get password(){
-    return this.loginForm.get('password');
+    return this.userDetailPage.get('password');
   }
   get phone(){
-    return this.loginForm.get('phone');
+    return this.userDetailPage.get('phone');
   }
 }
