@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    margin: 5px;
+  }
+  .data{
+      text-align: center;
+  }
+  h1{
+      text-decoration: underline;
+      margin-top: 5px;
+  }
+  
