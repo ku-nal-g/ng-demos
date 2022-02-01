@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="parent-div d-flex justify-content-center">
   <div class="container-fluid mt-5">
-      <form [formGroup] ="loginForm" (ngSubmit)="showUserData()"> 
+      <form [formGroup] ="userDetailPage" (ngSubmit)="showUserData()"> 
         <div class="mb-3 mt-2">
           <label class="form-label">Name:</label>
           <input type="text" class="form-control" placeholder="Enter name" formControlName="userName" [(ngModel)]="myName">
@@ -25,13 +25,15 @@
         <div class="mb-3">
           <label class="form-label">Phone:</label>
           <input type="tel" class="form-control" placeholder="Enter phone" formControlName="phone" [(ngModel)]="myPhone">
-          <span *ngIf="phone && phone.invalid" class="text-danger">Enter valid phone of 10 digits</span>
+          <span *ngIf="phone && phone.invalid" class="text-danger">Enter valid phone of no 10 digits</span>
         </div>
 
-        <button [disabled]="loginForm.invalid" class="btn btn-danger mt-3">Submit</button>
+        <button [disabled]="userDetailPage.invalid" class="btn btn-danger mt-3">Submit</button>
       </form>
     </div>
   </div>
+
+  <!--Two way Binding-->
 
   <div>
     <h2>Name : {{myName}}, Email: {{myEmail}}, Password: {{myPassword}}, Phone: {{myPhone}}</h2>
