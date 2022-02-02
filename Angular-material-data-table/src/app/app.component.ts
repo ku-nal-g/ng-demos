@@ -37,9 +37,13 @@ export class AppComponent implements AfterViewInit{
   applyFilter(item: any){
     this.dataSource.filter = item.trim().toLowerCase();
   }
+
+  // method to Log row data to the console 
+
+  logData(row:any){
+    console.warn(row);
+  }
 }
-
-
 export interface StudentData {
   name: string; 
   position: number;
