@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Web | Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <ul>
+        <h2 style="color: rgb(247, 244, 239); margin-top: 10px;">HTML</h2>
+        <li><a class="active" href="#home">Contacts</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">About</a></li>
+        <li><a href="#about">Home</a></li>
+      </ul>
+
+    <h2 style="text-align: center;">Forms and Various Input types </h2>
+
+    <div class="parent-div">
+      <div class="child-div">
+        <form action="index.php" target="_blank" method="get" novalidate>
+        <div>
+        <label>UserName:</label>
+          <br>
+        <input type="text" name="userName" autocomplete="off" placeholder="Enter name" required>
+      </div>
+        
+        <br>
+        
+        <div>
+        <label>Email:</label>
+          <br>
+        <input type="email" name="email" autocomplete="off" placeholder="Enter email" required>
+      </div>
+        <br>
+        
+        <div>
+        <label>Password:</label>
+          <br>
+        <input type="password" name="password" autocomplete="off" placeholder="Enter password" required>
+      </div>
+        <br>
+
+        <div>
+          <label>Date:</label>
+            <br>
+          <input type="date" name="date" autocomplete="off" required>
+        </div>
+          <br>
+
+          
+        <div>
+          <label>Time:</label>
+            <br>
+          <input type="time" name="time" autocomplete="off" required>
+        </div>
+          <br>
+
+          <div>
+            <label>Resume:</label>
+              <br>
+            <input type="file" name="file" autocomplete="off" required>
+          </div>
+            <br>
+
+            <div>
+              <label>Pincode:</label>
+                <br>
+              <input type="number" name="pin" autocomplete="off" required>
+            </div>
+              <br>
+
+          
+          
+          <div>
+        <label>Phone:</label>
+          <br>
+        <input type="tel" name="phone" autocomplete="off" placeholder="Enter phone" required>
+      </div>
+        <br>
+
+        <div>
+          <label>Portfolio Url:</label>
+            <br>
+          <input type="url" name="profile" autocomplete="off" value=".com" required>
+        </div>
+          <br>
+
+          
+        <div>
+          <label>Favourite Color:</label>
+            <br>
+          <input type="color" name="color" autocomplete="off" required>
+        </div>
+          <br>
+        
+        <div>
+          <label>Best Language:</label>
+          <input type="radio" name="fav_language" value="Python">
+          <label>Pyhton</label>
+           <input type="radio" name="fav_language" value="Java">
+          <label>Java</label>
+            <input type="radio" name="fav_language" value="C#">
+          <label>C#</label>
+        </div>
+        
+        <br>
+        
+        <div>
+          <label>Vehicles Used:</label>
+          <input type="checkbox" name="vehicled_used" value="Bike">
+          <label>Bike</label>
+          <input type="checkbox" name="vehicled_used" value="Car">
+          <label>Car</label>
+          <input type="checkbox" name="vehicled_used" value="Bicycle">
+          <label>Bicycle</label>
+        </div>
+        
+        <br>
+          
+          <div>
+            <label for="cars">Choose a car:</label>
+           <select id="cars" name="cars">
+           <option value="volvo">Volvo</option>
+           <option value="saab">Saab</option>
+           <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+         </select>
+          </div>
+          
+          <br>
+          
+          <div>
+            <label>Enter Message:</label>
+            <textarea name="message" rows="10" cols="30">
+              Tell us in Details
+            </textarea>
+          </div>
+          
+          <br>
+          
+          <div>
+            
+          </div>
+        
+        <div>
+          <button type="button" onclick="alert('Successfully submited data')">Click Me!</button>
+        </div>
+            </form>
+      </div>
+
+      </div>
+
+      <div class="footer">
+        <p>Footer &copy; India 2022</p>
+      </div>
+
+</body>
+</html>
+
