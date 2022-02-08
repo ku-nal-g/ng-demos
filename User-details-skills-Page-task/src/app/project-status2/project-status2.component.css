@@ -1,0 +1,28 @@
+.project1{
+    background-color: white;
+    border: 1px snow;
+    width: 29%;
+    position: relative;
+    bottom: 1165px;
+    margin-left: 1045px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.progress{
+    width: 95%;
+    margin-left: 2px;
+    height: 10px;
+    margin-bottom: 28px;
+}
+.prog-bar{
+    text-align: left;
+    padding: 10px;
+}
+.heading{
+     font-weight: bold;
+}
+.title{
+    color: rgb(70,176,199);
+    font-style: italic;
+    font-weight: 600;
+}
