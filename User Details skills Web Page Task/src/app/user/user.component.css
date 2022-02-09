@@ -1,0 +1,9 @@
+.userPage{
+    display: flex;
+    justify-content: center;
+}
+.text p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}

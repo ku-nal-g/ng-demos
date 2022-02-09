@@ -1,0 +1,13 @@
+<div class="profile-section">
+    <img src="assets/profile.png" alt="profile-img">
+
+    <h3 class="mt-2" style="font-weight: bold;">{{userInfoData.name}}</h3>
+
+    <p>{{userInfoData.position}}</p>
+    <p>{{userInfoData.place}}</p>
+
+    <div class="btn">
+     <button class="button follow-btn" (click)="alertMsg()">Follow</button>
+     <button class="button msg-btn" (click)="alertText()">Message</button>
+    </div>
+ </div>
