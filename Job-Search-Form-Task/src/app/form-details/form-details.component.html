@@ -1,4 +1,4 @@
-
+  <div style="text-align: center;"> <h2>Password : {{password1}}   Retype Password : {{password2}}</h2></div>
 <div class="parent-div">
 
     <div class="navbar">
@@ -25,67 +25,92 @@
         <div class="form-style">
   
           <form [formGroup]="basicInfo">
+
+            <!--Valid email address-->
   
             <div class="block">
               <label class="label-sz">Email<span style="color: red; margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="email" formControlName="email"><br>
-              <span class="error-msg" *ngIf="email && email.touched && email.invalid">Email is Required</span>
+              <span class="error-msg" *ngIf="email && email.touched && email.hasError('required')">Email is Required</span>
+              <span class="error-msg" *ngIf="email && email.touched && email.hasError('pattern')">Enter a Valid Email Address</span>
             </div>
-    
+
             <br>
+
+            <!--8 digits password with atleast 1 uppercase 1 lowercase 1 special symbols and 1 number-->
   
             <div class="block">
               <label class="label-sz">Password<span style="color: red;  margin-left: 4px;">*</span></label>
-              <input class="inputbox-design" style="margin-left: 8px;"  type="password" formControlName="password"><br>
-              <span class="error-msg" *ngIf="password && password.touched && password.invalid">Password is Required</span>
+              <input class="inputbox-design" style="margin-left: 8px;"  type="password" formControlName="password" [(ngModel)]="password1"><br>
+              <span class="error-msg" *ngIf="password && password.touched && password.hasError('required')">Password is Required</span>
+              <span class="error-msg" *ngIf="password && password.touched && password.hasError('pattern')">Enter a Valid Email Address</span>
             </div>
   
             <br>
+
+            <!--Retype password should match password-->
   
             <div class="block">
               <label class="label-sz">Retype Password<span style="color: red; margin-left: 4px;">*</span></label>
-              <input class="inputbox-design" style="margin-left: 8px;" type="password" formControlName="reTypePassword"><br>
-              <span class="error-msg" *ngIf="reTypePassword && reTypePassword.touched && reTypePassword.invalid">Password mismatch</span>
+              <input class="inputbox-design" style="margin-left: 8px;" type="password" formControlName="reTypePassword" [(ngModel)]="password2"><br>
+              <span class="error-msg" *ngIf="reTypePassword && reTypePassword.touched && reTypePassword.hasError('required')">Retype Password is Required</span>
             </div>
   
             <br>
+
+            <!--should not contain spaces and digits and special symbols-->
   
             <div class="block">
               <label class="label-sz">First Name<span style="color: red;  margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="text" formControlName="firstName"><br>
-              <span class="error-msg" *ngIf="firstName && firstName.touched && firstName.invalid">First Name is Required </span>
+              <span class="error-msg" *ngIf="firstName && firstName.touched && firstName.hasError('required')">First Name is Required</span>
+              <span class="error-msg" *ngIf="firstName && firstName.touched && firstName.hasError('pattern')">Enter a Valid First Name</span>
             </div>
   
             <br>
+
+               <!--should not contain spaces and digits and special symbols-->
   
             <div class="block">
               <label class="label-sz">Last Name<span style="color: red; margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="text" formControlName="lastName"><br>
-              <span class="error-msg" *ngIf="lastName && lastName.touched && lastName.invalid">Last Name is Required</span>
+              <span class="error-msg" *ngIf="lastName && lastName.touched && lastName.hasError('required')">Last Name is Required</span>
+              <span class="error-msg" *ngIf="lastName && lastName.touched && lastName.hasError('pattern')">Enter a Valid First Name</span>
             </div>
   
             <br>
+
+            <!--Must be 10 digit number-->
   
             <div class="block">
               <label class="label-sz">Phone Number<span style="color: red; margin-left: 4px;">*</span></label>
               <input class="inputbox-design" type="tel" style="margin-left: 8px;" formControlName="phoneNumber"><br>
-              <span class="error-msg" *ngIf="phoneNumber && phoneNumber.touched && phoneNumber.invalid">Phone Number is Required</span>
+              <span class="error-msg" *ngIf="phoneNumber && phoneNumber.touched && phoneNumber.hasError('required')">Phone Number is Required</span>
+              <span class="error-msg" *ngIf="phoneNumber && phoneNumber.touched && phoneNumber.hasError('pattern')">Enter a Valid 10 digit Phone Number</span>
+
             </div>
   
             <br>
+
+            <!--should have at least 4 letters -->
   
             <div class="block">
               <label class="label-sz">Address<span style="color: red;  margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="address" formControlName="address"><br>
-              <span class="error-msg" *ngIf="address && address.touched && address.invalid">Address is Required</span>
+              <span class="error-msg" *ngIf="address && address.touched && address.hasError('required')">Address is Required</span>
+              <span class="error-msg" *ngIf="address && address.touched && address.hasError('minLength')">Address should be greater than 4 letters</span>
             </div>
   
             <br>
+
+            <!--should not contain digits spaces and special symbols-->
   
             <div class="block">
               <label class="label-sz">City<span style="color: red;  margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="text" formControlName="city"><br>
-              <span class="error-msg" *ngIf="city && city.touched && city.invalid">City is Required</span>
+              <span class="error-msg" *ngIf="city && city.touched && city.hasError('required')">City is Required</span>
+              <span class="error-msg" *ngIf="city && city.touched && city.hasError('pattern')">Enter a Valid City</span>
+
             </div>
   
             <br>
@@ -93,7 +118,7 @@
             <div class="block">
               <label class="label-sz">Province<span style="color: red;  margin-left: 4px;">*</span></label>
               <select style="margin-left: 8px;" name="province" id="province" formControlName="province">
-                <option value="" selected>Alberta</option>
+                <option value="">Alberta</option>
                 <option value="Gandaki Pradesh">Gandaki Pradesh</option>
                 <option value="	Karnali Pradesh">Karnali Pradesh</option>
                 <span class="error-msg" *ngIf="province && province.touched && province.invalid">Enter valid province</span>
@@ -101,12 +126,15 @@
             </div>
   
             <br>
+
+            <!--should not contain numbers special symbols and spaces-->
   
             
             <div class="country">
               <label class="label-sz">Country<span style="color: red;  margin-left: 4px;">*</span></label>
               <input class="inputbox-design" style="margin-left: 8px;" type="address" formControlName="country"><br>
-              <span class="error-msg" *ngIf="country && country.touched && country.invalid">Country is Required</span>
+              <span class="error-msg" *ngIf="country && country.touched && country.hasError('required')">Country is Required</span>
+              <span class="error-msg" *ngIf="country && country.touched && country.hasError('pattern')">Enter a Valid Country</span>
             </div>
   
             </form>
@@ -134,7 +162,8 @@
               <div class="block">
                 <label class="label-sz">School<span style="color: red;  margin-left: 4px;">*</span></label>
                 <input class="inputbox-design" style="margin-left: 8px;" type="text" formControlName="school"><br>
-                <span class="error-msg" *ngIf="school && school.touched && school.invalid">School is Required</span>
+                <span class="error-msg" *ngIf="school && school.touched && school.hasError('required')">School is Required</span>
+                <span class="error-msg" *ngIf="school && school.touched && school.hasError('pattern')">Enter a Valid school name</span>
   
               </div>
       
@@ -153,9 +182,11 @@
                 <label class="label-sz">Education Level<span style="color: red;  margin-left: 4px;">*</span></label>
                 <select style="margin-left: 8px;" name="edu" id="edu" formControlName="educationLevel">
                   <option value="" selected>-select-</option>
-                  <option value="Gandaki Pradesh">Gandaki Pradesh</option>
-                  <option value="Karnali Pradesh">Karnali Pradesh</option>
-                </select>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="English">Graduation</option>
+                  <option value="hindi">Post Graduation</option>
+                </select><br>
+                <span class="error-msg" *ngIf="educationLevel && educationLevel.invalid && educationLevel.touched">Please choose a education Level</span>
               </div>
     
               <br>
@@ -163,19 +194,18 @@
               <div class="radio-btn">
                 <fieldset>
                   <legend>Education Status</legend>
-  
-                  <input type="radio" class="radio-style" name="edu-status"><span class="label-sz">Graduated</span><br>
-                  <input type="radio" name="edu-status"><span class="label-sz">Current Graduate</span><br>
-                  <input type="radio" name="edu-status"><span class="label-sz">Did Not Graduate</span><br>
-                </fieldset>
-  
+                  <input type="radio" name="graduationStatus" value="graduated" formControlName="graduationStatus"><span class="label-sz">Graduated</span><br>
+                  <input type="radio" name="graduationStatus" value="curr-graduated"  formControlName="graduationStatus"><span class="label-sz">Current Graduate</span><br>
+                  <input type="radio" name="graduationStatus" value="not-graduated"  formControlName="graduationStatus"><span class="label-sz">Did Not Graduate</span><br>
+                </fieldset><br>
               </div>
   
               <br>
     
               <div class="date">
-                <label class="label-sz">Graduation Date</label>
-                <input class="inputbox-design" style="margin-left: 8px;"  type="date" formControlName="graduationDate">
+                <label class="label-sz">Graduation Date<span style="color: red;  margin-left: 4px;">*</span></label>
+                <input class="inputbox-design" style="margin-left: 8px;"  type="date" formControlName="graduationDate"><br>
+                <span class="error-msg" *ngIf="graduationDate && graduationDate.invalid && graduationDate.touched">Please Choose a Date</span>
               </div>
     
             </form>
@@ -217,15 +247,18 @@
   
   
             <div class="block text">
-            <label class="label-sz">Job Duty:</label>
+            <label class="label-sz pos">Job Duty:</label>
             <textarea style="margin-left: 10px;" rows="8" cols="79" formControlName="jobDuty"></textarea>
             </div>
   
             <br>
+
+            <!--Min length 1 && Max length 2-->
   
             <div class="year">
               <label class="label-sz">Worked Year:</label>
-              <input class="inputbox-design" type="number"  formControlName="workedYear">
+              <input class="inputbox-design" type="number"  formControlName="workedYear"><br>
+              <span class="error-msg" *ngIf="workedYear && workedYear.invalid && workedYear.touched"></span>
             </div>
   
           </form>
@@ -264,10 +297,10 @@
   </div>
   
   <div class="btn">
-    <input type="reset" class="reset" name="reset">
-    <input type="Submit" class="apply" value="Apply">
+    <button type="reset" class="reset" name="reset" (click)="resetForm()">Reset</button>
+    <button [disabled]="basicInfo.invalid && educationInfo.invalid" class="apply" (click)="passwordMismatch()" value="Apply">Apply</button>
   </div>
   
   </div>
   
-  
+ 
