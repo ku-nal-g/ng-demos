@@ -85,6 +85,7 @@ select{
 .btn{
     text-align: center;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 .reset , .apply{
     margin-right: 20px;
@@ -95,11 +96,15 @@ select{
     margin-top: 40px;
     width: 10%;
 }
-.radio-style{
-    padding: 20px;
-    font-size: 20px;
-}
 .error-msg{
     margin-left: 175px;
     color: red;
+}
+.pos{
+    position: relative;
+    bottom: 110px;
+}
+
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
 }
