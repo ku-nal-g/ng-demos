@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+
+  <div class="col-md-8">
+    <div class="mb-3">
+      <input type="text" class="form-control-sm" id="serachByClass_5" placeholder="search by class 5 Subjects" [(ngModel)]='sub5Search'>
+      <input type="text" class="form-control-sm input1" id="serachByClass_6" placeholder="search by class 6 Subjects">
+      <input type="text" class="form-control-sm input2" id="serachByClass_7" placeholder="search by class 7 Subjects">
+    </div>
+  </div>
+
+  <div class="col-md-8 bg-light box">
+<table class="table">
+  <thead class="bg-info text-white">
+    <tr>
+      <th scope="col">Class 5</th>
+      <th scope="col">Class 6</th>
+      <th scope="col">Class 7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of subjectsArr | filter1:sub5Search">
+      <td>{{subject.class_5}}</td>
+      <td>{{subject.class_6}}</td>
+      <td>{{subject.class_7}}</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+</div>
