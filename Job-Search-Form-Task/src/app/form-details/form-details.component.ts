@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -13,23 +13,27 @@ export class FormDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  password1:string = '';
+  password2:string = '';
+
   basicInfo = new FormGroup({
-    email: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z0-9]+.\.*.@.[gmail]+.\.[com]+')]),
+    password: new FormControl('',[Validators.required,Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8})')]),
     reTypePassword: new FormControl('',[Validators.required]),
-    firstName: new FormControl('',[Validators.required]),
-    lastName: new FormControl('',[Validators.required]),
-    phoneNumber: new FormControl('999-999-9999',[Validators.required]),
-    address: new FormControl('',[Validators.required]),
-    city: new FormControl('',[Validators.required]),
+    firstName: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+')]),
+    lastName: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+')]),
+    phoneNumber: new FormControl('999-999-9999',[Validators.required,Validators.pattern('[0-9]{10}')]),
+    address: new FormControl('',[Validators.required,Validators.minLength(4)]),
+    city: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+( [A-Za-z]+)*')]),
     province: new FormControl('',[Validators.required]),
-    country: new FormControl('',[Validators.required]),
+    country: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+( [A-Za-z]+)*')]),
   });
 
   educationInfo = new FormGroup({
-    school: new FormControl('',[Validators.required]),
-    program: new FormControl('',[Validators.required]),
+    school: new FormControl('',[Validators.required , Validators.pattern('[a-zA-Z.]+( [A-Za-z]+)*')]),
+    program: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z.]+( [A-Za-z]+)*')]),
     educationLevel: new FormControl('',[Validators.required]),
+    graduationStatus: new FormControl('',[Validators.required]),
     graduationDate: new FormControl('',[Validators.required]),
   });
 
@@ -37,7 +41,7 @@ export class FormDetailsComponent implements OnInit {
     employer: new FormControl(),
     jobTitle: new FormControl(),
     jobDuty: new FormControl(),
-    workedYear: new FormControl(),
+    workedYear: new FormControl('',[Validators.required,Validators.pattern('[0-9]{1,2}')]),
   });
 
   attachment = new FormGroup({
@@ -85,6 +89,9 @@ export class FormDetailsComponent implements OnInit {
   get educationLevel(){
     return this.educationInfo.get('educationLevel');
   }
+  get graduationStatus(){
+    return this.educationInfo.get('graduationStatus');
+  }
   get graduationDate(){
     return this.educationInfo.get('graduationDate');
   }
@@ -104,5 +111,28 @@ export class FormDetailsComponent implements OnInit {
     return this.attachment.get('fileData');
   }
 
+  // method to compare password
 
+  passwordMismatch(){
+    if(this.basicInfo.value.password != this.basicInfo.value.reTypePassword)
+    {
+      alert("Password Mismatch");
+    }
+    else
+    {
+      alert("You have applied suucessfully");
+      console.log(this.basicInfo.value);
+      console.log(this.educationInfo.value);
+      console.log(this.workExperience.value);
+      console.log(this.attachment.value);
+
+    }
+  }
+
+  resetForm(){
+    this.basicInfo.reset();
+    this.educationInfo.reset();
+    this.workExperience.reset();
+    this.attachment.reset();
+  }
 }
