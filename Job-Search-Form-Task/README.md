@@ -1,6 +1,12 @@
 # JobSearchFormTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task war created by me on 11/02/2022.
+To run the project
+
+(i)   download zip file
+(ii)  Open the folder in vs code then open vs code terminal and hit npm install or npm (i)
+(iii) then hit ng serve 
+(iv)  Done.
 
 ## Development server
 
