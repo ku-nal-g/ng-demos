@@ -1,0 +1,43 @@
+<div class="btn">
+  <button mat-flat-button color="warn" [matMenuTriggerFor]="subjects">SubjectsOfClass</button>
+<mat-menu #subjects="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="sub9">  Class  9</button>
+  <button mat-menu-item [matMenuTriggerFor]="sub10">Class 10</button>
+  <button mat-menu-item [matMenuTriggerFor]="sub11">Class 11</button>
+  <button mat-menu-item [matMenuTriggerFor]="sub12">Class 12</button>
+</mat-menu>
+
+<mat-menu #sub9="matMenu">
+  <button mat-menu-item>Java</button>
+  <button mat-menu-item>Python</button>
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React Js</button>
+  <button mat-menu-item>TypeScript</button>
+</mat-menu>
+
+<mat-menu #sub10="matMenu">
+  <button mat-menu-item>C</button>
+  <button mat-menu-item>MySql</button>
+  <button mat-menu-item>Oracle</button>
+  <button mat-menu-item>Aws</button>
+  <button mat-menu-item>Networks</button>
+</mat-menu>
+
+<mat-menu #sub11="matMenu">
+  <button mat-menu-item>DataBase</button>
+  <button mat-menu-item>MongoDb</button>
+  <button mat-menu-item>Linear Algebra</button>
+  <button mat-menu-item>Machine learning</button>
+  <button mat-menu-item>Cloud Computing</button>
+</mat-menu>
+
+<mat-menu #sub12="matMenu">
+  <button mat-menu-item>FireBase</button>
+  <button mat-menu-item>Digital Logic</button>
+  <button mat-menu-item>VueJs</button>
+  <button mat-menu-item>Sequlize</button>
+  <button mat-menu-item>JSon</button>
+</mat-menu>
+
+
+</div>
