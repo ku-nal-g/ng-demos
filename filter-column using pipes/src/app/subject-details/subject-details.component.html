@@ -1,0 +1,20 @@
+<div class="parent-div">
+    <div class="child-div mr-left">
+      <input type="text" placeholder="Search By Subjects..." id="search" [(ngModel)]="searchBySubject">
+      <table>
+        <tr>
+          <th>{{classListData}}</th>
+        </tr>
+
+        <ng-container *ngIf="(subjectsData | filter1 : searchBySubject) as result">
+        <tr *ngFor="let data of result">
+        <td>{{data}}</td>
+       </tr>
+       <p *ngIf="result.length === 0"><b>{{searchBySubject}}</b> not found..</p>
+       </ng-container> 
+
+        </table>
+      </div>
+    </div>
+
+    
