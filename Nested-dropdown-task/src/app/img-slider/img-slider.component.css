@@ -1,0 +1,15 @@
+.parent-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.para{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<ul>
+    <li><a></a></li>
+    <li><a href="home">Home</a></li>
+    <li><div class=".btn">
+        <button mat-flat-button [matMenuTriggerFor]="subjects" class="design-btn">SubjectsOfClass</button>
+      <mat-menu #subjects="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="sub9">{{subjectsData[0].className}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="sub10">{{subjectsData[1].className}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="sub11">{{subjectsData[2].className}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="sub12">{{subjectsData[3].className}}</button>
+      </mat-menu>
+      
+      <mat-menu #sub9="matMenu">
+        <button mat-menu-item *ngFor="let data of subjectsData[0].subjectsName">{{data}}</button>
+      </mat-menu>
+      
+      <mat-menu #sub10="matMenu">
+        <button mat-menu-item *ngFor="let data of subjectsData[1].subjectsName">{{data}}</button>
+      </mat-menu>
+      
+      <mat-menu #sub11="matMenu">
+        <button mat-menu-item *ngFor="let data of subjectsData[2].subjectsName">{{data}}</button>
+      </mat-menu>
+      
+      <mat-menu #sub12="matMenu">
+        <button mat-menu-item *ngFor="let data of subjectsData[3].subjectsName">{{data}}</button>
+      </mat-menu>
+      </div>
+    </li>
+
+    <li><a routerLink="log-out">Log Out</a></li>
+    </ul>
+      
+<router-outlet></router-outlet>
+
+
+  
+  
