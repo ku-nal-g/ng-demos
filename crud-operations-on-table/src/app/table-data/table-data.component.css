@@ -1,0 +1,42 @@
+.parent-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headline p{
+    font-weight: 530;
+    font-size: 25px;
+}
+.table-data{
+    width: 100%;
+    margin-top: 1.5%
+}
+#users-info {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #users-info td, #users-info th {
+    padding: 8px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+#users-info tr:nth-child(even){background-color: rgb(249, 249, 249);}
+
+#users-info tr:hover {background-color: rgb(235, 228, 228);}
+
+#users-info th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+  }
+  .align-btn{
+      margin-left: 1%;
+  }
