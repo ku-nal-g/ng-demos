@@ -1,6 +1,11 @@
 # UserSignupFormAssessment1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This project was created by me on 18/07/2022
+To run the project
+(i) download the zip file of project and extract it
+(ii) open with vs code and hit npm i in vs code terminal
+(iii) then hit ng serve --open in vs code terminal
+(iv) Done
 
 ## Development server
 
