@@ -1,0 +1,54 @@
+<div class="parent-div">
+    <div class="table-data">
+        <table class="table table-bordered" id="users-info">
+            <thead>
+              <tr>
+                <th *ngFor="let cols of displayColumns" scope="col">{{cols}}</th>
+              </tr>
+            </thead>
+
+            <tbody> 
+                <tr>
+                    <td> <input type="text" #fname class="form-control" placeholder="Enter First Name"></td>
+                    <td> <input type="text" #lname class="form-control" placeholder="Enter Last Name"></td>
+                    <td> <button type="button" class="btn btn-success" (click)="addUser(fname.value,lname.value,false)">Add</button></td>
+                  </tr>
+  
+              <tr *ngFor="let data of usersDetails; let i=index">
+                  <td>
+                      <div *ngIf="!data.isEdit">
+                          {{data.firstName}}
+                      </div>
+
+                      <div *ngIf="data.isEdit">
+                          <input type="text" class="form-control" [(ngModel)]="data.firstName">
+                      </div>
+                  </td>
+
+                  <td>
+                    <div *ngIf="!data.isEdit">
+                        {{data.lastName}}
+                    </div>
+
+                    <div *ngIf="data.isEdit">
+                        <input type="text" class="form-control" [(ngModel)]="data.lastName">
+                    </div>
+                </td>
+
+                <td *ngIf="!data.isEdit">
+                    <button type="button" class="btn btn-primary" (click)="isEditing(i)">Edit</button> 
+                    <button type="button" class="btn btn-danger align-btn" (click)="removeData(i)">Delete</button>
+                </td>
+
+                <td *ngIf="data.isEdit">
+                   <button type="button" class="btn btn-info text-light" (click)="saveBtn(i)">Save</button> 
+                   <button type="button" class="btn btn-light text-dark align-btn" (click)="closeComponent(i)">Cancel</button>
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+    </div>
+  </div>

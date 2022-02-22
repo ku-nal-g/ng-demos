@@ -1,0 +1,42 @@
+$trnthEvenChild-Bg: rgb(249,249,249);
+$trHover-Bg: rgb(235,228,228);
+$usersInfoDivFont: Arial, Helvetica , sans-serif;
+
+.parent-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+.table-data{
+    width: 100%;
+}
+#users-info {
+    font-family: $usersInfoDivFont;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #users-info td, #users-info th {
+    padding: 8px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+#users-info tr:nth-child(even){background-color: $trnthEvenChild-Bg;}
+
+#users-info tr:hover {background-color: $trHover-Bg;}
+
+#users-info th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+  }
+  .align-btn{
+      margin-left: 1%;
+  }
