@@ -1,0 +1,9 @@
+.valid a:hover{
+    background-color: rgb(231, 231, 231);
+    font-weight: 600;
+    color: black;
+}
+nav{
+    padding: 1%;
+    font-size: 18px;
+}

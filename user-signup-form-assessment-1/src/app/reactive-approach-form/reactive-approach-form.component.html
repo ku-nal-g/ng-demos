@@ -1,0 +1,96 @@
+  <!--Reactive Driven Forms -->
+
+  <div class="parent-div">
+    <form [formGroup]="signUpUser" (ngSubmit)="saveUserData()">
+    <div class="name-div">
+        <label for="Name" [ngClass]="{ 'ng-invalid': name?.invalid && (name?.dirty || name?.touched) }">Name<span>*</span></label><br>
+        <input type="text" formControlName="name">
+        <div *ngIf="name?.touched && name?.invalid">
+          <h6 class="error-msg" *ngIf="name?.errors?.['required']">Please inform your name</h6>
+          <h6 class="error-msg" *ngIf="name?.errors?.['pattern']">Please inform your valid name</h6>
+        </div>
+        </div>
+
+    <div class="email-div">
+      <label for="email" [ngClass]="{'ng-invalid': email?.invalid && (email?.dirty || email?.touched) }">Email<span>*</span></label><br>
+      <input type="email" formControlName="email">
+      <div *ngIf="email?.touched && email?.invalid">
+          <h6 class="error-msg" *ngIf="email?.errors?.['required']">Please inform your email</h6>
+          <h6 class="error-msg" *ngIf="email?.errors?.['pattern']">Please inform your valid email address</h6>
+        </div>
+   </div>
+
+  <div class="address-div">
+      <div class="address1-div">
+          <label for="address1" [ngClass]="{'ng-invalid': address1?.invalid && (address1?.dirty || address1?.touched) }">Address<span>*</span></label><br>
+          <input type="text" formControlName="address1">
+          <div *ngIf="address1?.touched && address1?.invalid">
+            <h6 class="error-msg" *ngIf="address1?.errors?.['required']">Please inform your address</h6>
+            <h6 class="error-msg" *ngIf="address1?.errors?.['minlength']">Please inform your valid address</h6>
+          </div>
+      </div>
+
+      <div class="address2-div">
+          <label for="address2" [ngClass]="{'ng-invalid': address2?.invalid && (address2?.dirty || address2?.touched) }">Address 2<span>*</span></label><br>
+          <input type="text" name="address2" formControlName="address2">
+          <div *ngIf="address2?.touched && address2?.invalid">
+            <h6 class="error-msg" *ngIf="address2?.errors?.['required']">Please inform your 2nd address</h6>
+            <h6 class="error-msg" *ngIf="address2?.errors?.['minlength']">Please inform your valid 2nd address</h6>
+          </div>
+      </div>
+
+      <!--6 digit valid zipcode-->
+
+      <div class="zip-div">
+          <label for="zip" [ngClass]="{'ng-invalid': zip?.invalid && (zip?.dirty || zip?.touched) }">Zip Code<span>*</span></label><br>
+          <input type="text" formControlName="zip">
+          <div *ngIf="zip?.touched && zip?.invalid">
+            <h6 class="error-msg" *ngIf="zip?.errors?.['required']">Please inform your zipCode</h6>
+            <h6 class="error-msg" *ngIf="zip?.errors?.['pattern']">Please inform your valid zipCode</h6>
+          </div>
+          
+      </div>
+  </div>
+
+  <div class="city-details">
+      <div class="city-div">
+          <label for="city" [ngClass]="{'ng-invalid': city?.invalid && (city?.dirty || city?.touched) }">City<span>*</span></label><br>
+          <input type="text" formControlName="city">
+          <div *ngIf="city?.touched && city?.invalid">
+            <h6 class="error-msg" *ngIf="city?.errors?.['required']">Please inform your city</h6>
+            <h6 class="error-msg" *ngIf="city?.errors?.['pattern']">Please inform your valid city</h6>
+          </div>
+          
+      </div>
+
+      <div class="state-div">
+          <label for="city" [ngClass]="{'ng-invalid': state?.invalid && (state?.dirty || state?.touched) }">State / Province / Region<span>*</span></label><br>
+          <input type="text" formControlName="state">
+          <div *ngIf="state?.touched && state?.invalid">
+            <h6 class="error-msg" *ngIf="state?.errors?.['required']">Please inform your state</h6>
+            <h6 class="error-msg" *ngIf="state?.errors?.['pattern']">Please inform your valid state</h6>
+          </div>
+        
+      </div>
+
+      <div class="country-div">
+          <label for="city" [ngClass]="{'ng-invalid': country?.invalid && (country?.dirty || country?.touched) }">Country<span>*</span></label><br>
+          <input type="text" formControlName="country">
+          <div *ngIf="country?.touched && country?.invalid">
+            <h6 class="error-msg" *ngIf="country?.errors?.['required']">Please inform your country</h6>
+            <h6 class="error-msg" *ngIf="country?.errors?.['pattern']">Please inform your valid countrys</h6>
+          </div>
+      </div>
+  </div>
+
+  <div class="btn">
+      <div class="submit-btn">
+          <button [disabled]="!signUpUser.valid" class=".sub-btn">Submit</button>
+      </div>
+      <div class="reset-btn">
+          <input type="reset" value="Reset">
+      </div>
+  </div>
+
+</form>
+</div>
