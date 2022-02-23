@@ -1,0 +1,46 @@
+.parent-div{
+    padding: 0.5%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
+}
+.child-div{
+    width: 80%;
+    display: flex;
+    margin-top: 2%;
+    padding: 0.5%;
+    margin-left: 22%;
+}
+.input-div{
+    width: 70%;
+    margin-left: 1%;
+    margin-right: 2%;
+}
+.input-div input{
+    padding: 1%;
+}
+.card{
+    width: 50%;
+    background: #f2f2f2;
+    height: 40vh;
+    margin: 50px auto;
+    border-radius: 2px;
+  }
+  .close{
+    float: right;
+    margin-top: -2px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .card h1{
+    padding: 5px 0;
+    text-align: center;
+  }
+  
+  .card p{
+    text-align: center;
+    margin:40px 0;
+    font-size:20px;
+  }

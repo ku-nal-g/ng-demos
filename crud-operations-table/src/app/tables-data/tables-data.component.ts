@@ -16,6 +16,9 @@ export class TablesDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  fname:string = '';
+  lname:string = '';
+
   //columns to be displayed
 
   displayColumns:string[] = ['First Name','Last Name','Action'];
@@ -55,7 +58,7 @@ export class TablesDataComponent implements OnInit {
  },
 ];
 
-result:boolean = false;
+ result = false;
 
 // method to add data to array
 
@@ -84,11 +87,15 @@ removeData(index:number){
 //This method enables editing mode
 isEditing(index:number){
   this.usersDetails[index].isEdit = true;
+  this.fname = this.usersDetails[index].firstName;
+  this.lname = this.usersDetails[index].lastName;
 }
 
 // user cancels editing mode
 closeComponent(index:number){
   this.usersDetails[index].isEdit = false;
+  this.usersDetails[index].firstName = this.fname;
+  this.usersDetails[index].lastName = this.lname;
 }
 // users clicks on save button
 saveBtn(index:number){

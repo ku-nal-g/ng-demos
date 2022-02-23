@@ -1,0 +1,22 @@
+<div class="parent-div">
+    <div class="child-div">
+        <div class="input-div">
+            <input type="text" [(ngModel)]="cityName" #city class="form-control" placeholder="Enter City Name... ">
+        </div>
+        <div class=".btn-div">
+            <button type="button" (click)="btnClicked(city.value)" class="btn btn-lg bg-dark text-light">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isClicked" class="container">
+    <div class="card" *ngIf="weatherInfo"  >
+      <h1 class="name" id="name">{{weatherInfo.name}}</h1>
+      <p class="temp">Temperature :{{weatherInfo['main']['temp'] - 273 |number: '1.0-0'}}&deg;C</p>
+      <p class="country">Country :{{weatherInfo['sys']['country']}}</p>
+      <p class="desc">Weather Description :{{weatherInfo['weather'][0]['description'] | titlecase}}</p>
+    </div>
+    <div *ngIf="!weatherInfo">
+        ERRor
+    </div>
+</div>
