@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherDataService } from '../services/weather-data.service';
 
 @Component({
-  selector: 'app-city-details',
-  templateUrl: './city-details.component.html',
-  styleUrls: ['./city-details.component.scss']
+  selector: 'app-weather-details',
+  templateUrl: './weather-details.component.html',
+  styleUrls: ['./weather-details.component.scss']
 })
-export class CityDetailsComponent implements OnInit {
+export class WeatherDetailsComponent implements OnInit {
 
+ 
   weatherInfo?: any;
 
   isClicked: boolean = false;
@@ -36,5 +37,4 @@ export class CityDetailsComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 }

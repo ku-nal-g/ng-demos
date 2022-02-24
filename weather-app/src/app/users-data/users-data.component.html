@@ -1,0 +1,24 @@
+<div class="parent-div">
+    <div class="child-div">
+        <table id="users" class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of usersInformation">
+                    <td>{{data.id}}</td>
+                    <td>{{data.first}}</td>
+                    <td>{{data.last}}</td>
+                    <td>{{data.email}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+          </table>
+
+    </div>
+</div>
