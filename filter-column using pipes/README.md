@@ -1,6 +1,13 @@
 # Filter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task was dobe by me on 15/02/2022
+
+To run the task
+
+(i) Download and UNzip the file
+(ii) Hit npm i in vs code terminal
+(iii) Hit ng serve --open 
+(iv) Done
 
 ## Development server
 
