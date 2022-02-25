@@ -9,9 +9,9 @@ export class PaymentsAuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const isAdmin = false;
+      const isAdmin = true;
       if(isAdmin){
-        return true;
+        return false;
       }
       else{
         alert("You are not allowed to view this page as you have not logged in...");

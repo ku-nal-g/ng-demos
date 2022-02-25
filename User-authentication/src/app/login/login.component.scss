@@ -1,0 +1,35 @@
+.form-group{
+    margin-bottom: 5%;
+}
+.container{
+    margin-top: 5%;
+    padding: 0%;
+    height: 20vh;
+}
+.card{
+    background-color: #f2f2f2f2;
+    width: 60%;
+    height: 50vh;
+}
+input[type=submit]{
+    margin-top: 2%;
+}
+.card-footer small{
+    font-size: 16px;
+}
+.error-msg{
+    color: red;
+    margin-top: 0.2%;
+    font-weight: 600;
+}
+.parent-div{
+    display: flex;
+    justify-content: center;
+}
+input[type=submit]:disabled{
+    color: white;
+    background-color: rgb(75, 68, 68);
+}
+a{
+    text-decoration: none;
+}

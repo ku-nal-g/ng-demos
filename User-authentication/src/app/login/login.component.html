@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="parent-div">
+  <div class="child-div">
+    <h3>email {{ userEmail }} password : {{ userPassword }}</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center h-100">
+    <div class="card my-auto shadow">
+      <div class="card-body px-5">
+        <div class="text-center">
+          <!-- <fa-icon [icon]="faLock" class="fa-3x"></fa-icon> -->
+        </div>
+        <div class="text-center">
+          <h2>Welcome Admin</h2>
+        </div>
+        <p style="color: lightslategray; text-align: center" class="text-muted">
+          Please Enter your Login details
+        </p>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              class="form-control"
+              formControlName="email"
+              name="email"
+              [(ngModel)]="userEmail"
+            />
+            <span
+              class="error-msg"
+              *ngIf="email && email.touched && email.hasError('required')"
+              >Please inform your email...</span
+            >
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              class="form-control"
+              formControlName="password"
+              name="password"
+              [(ngModel)]="userPassword"
+            />
+            <span
+              class="error-msg"
+              *ngIf="
+                password && password.touched && password.hasError('required')
+              "
+              >Please inform user password...</span
+            >
+          </div>
+          <input
+            [disabled]="loginForm.invalid"
+            type="submit"
+            class="btn btn-dark w-100"
+            value="Submit"
+          />
+        </form>
+      </div>
+      <div class="card-footer text-center">
+        <small><a routerLink="../forget-password">Forgot Password</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
