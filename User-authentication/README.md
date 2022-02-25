@@ -1,6 +1,12 @@
 # UserAuthentication
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task was done by me on 25/02/2022
+
+To run the task
+(i) Downlaod and unzip the file
+(ii) hit npm i 
+(iii) hit ng serve --open
+(iv) Done
 
 ## Development server
 
