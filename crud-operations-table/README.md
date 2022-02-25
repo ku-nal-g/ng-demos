@@ -1,6 +1,14 @@
 # CrudOperationsTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This task was done be me on 21/02/2022
+
+
+To run the task
+
+(i)  Download and unzip the file
+(ii) Open in vs code and press npm i in vs code terminal
+(iii) Hit ng serve --open 
+(iv) Done
 
 ## Development server
 
