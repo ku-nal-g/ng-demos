@@ -1,6 +1,13 @@
 # FilterDataTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.This Task was done ny me on 16/02/2022
+
+To run the task
+
+(i) Download the zip file and unzip it
+(ii) open in vs code and npm i 
+(iii) Hit ng serve --open
+(iv) Done
 
 ## Development server
 
