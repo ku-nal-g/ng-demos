@@ -1,0 +1,54 @@
+<h2 style="text-align: center;">Get Data from Fake Rest API and Post Data Also</h2>
+
+<div class="form-div">
+  <div class="form-design">
+    <form #addUser="ngForm" (ngSubmit)="getUser(addUser)">
+      <label for="name" class="form-group">Name: </label><br>
+      <input type="text" class="form-control" placeholder="Enter name" required name="name" ngModel #name="ngModel">
+      <div *ngIf="name.touched && name.invalid">
+        <h6 class="error-msg">Please inform your name</h6>
+      </div>
+
+      <br>
+  
+      <label for="username" class="form-group">User Name: </label><br>
+      <input type="text" class="form-control" placeholder="Enter user name" required name="username" ngModel #username="ngModel">
+      <div *ngIf="username.touched && username.invalid">
+        <h6 class="error-msg">Please inform your username</h6>
+      </div>
+
+      <br>
+      
+      <label for="email" class="form-group">Email: </label><br>
+      <input type="email" class="form-control" placeholder="Enter email" required name="email" ngModel #email="ngModel">
+      <div *ngIf="email.touched && email.invalid">
+        <h6 class="error-msg">Please inform your email</h6>
+      </div>
+
+      <br>
+  
+      <button [disabled]="addUser.invalid" class="btn btn-dark">Add New User</button>
+    </form>
+  </div>
+</div>
+
+<div class="parent-div">
+  <div class="child-div">
+    <table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>UserName</th>
+    <th>Email</th>
+  </tr>
+
+  <tr *ngFor="let data of usersInfo,let i=index">
+    <td>{{i+1}}</td>
+    <td>{{data.name}}</td>
+    <td>{{data.username}}</td>
+    <td>{{data.email}}</td>
+  </tr>
+ 
+</table>
+  </div>
+</div>

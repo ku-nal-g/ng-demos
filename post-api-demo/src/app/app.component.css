@@ -1,0 +1,49 @@
+.parent-div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1%;
+}
+.child-div{
+    border: 1px solid snow;
+    width: 80%;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  table th{
+      background-color: rgb(66, 126, 66);
+      color: white;
+  }
+  .form-div{
+      display: flex;
+      justify-content: center;
+      border: 1px solid snow;
+      margin-top: 2%;
+  }
+  .form-design{
+      width: 80%;
+  }
+  .form-design input{
+      width: 100%;
+  }
+  .form-design button{
+      margin-bottom: 3%;
+  }
+  .error-msg{
+      color: red;
+      font-size: 16px;
+      font-weight: 500;
+  }
