@@ -7,10 +7,6 @@ const routes: Routes = [
     path: '',
     component: AdminComponent
   },
-  {
-    path : '/login',
-    component: AdminComponent
-  }
 ];
 
 @NgModule({

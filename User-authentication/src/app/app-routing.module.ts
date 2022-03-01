@@ -23,8 +23,8 @@ const routes: Routes = [
   // lazy loading modules
   {
     path: 'admin',
-    canActivate: [AdminAuthGuard],
     loadChildren: () => import('./modules/admin/admin.module').then((m) =>m.AdminModule),
+    canActivate: [AdminAuthGuard],
   },
   // wildcard routing
   {

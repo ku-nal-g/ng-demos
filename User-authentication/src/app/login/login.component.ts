@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private auth:UserAuthService, private router:Router) { }
+  constructor( private auth:UserAuthService, private route:Router) { }
 
   userEmail:string = '';
   userPassword:string = '';
 
   ngOnInit(): void {
+    if(this.auth.isLoggedIn()){
+      this.route.navigate(['admin']);
+    }
   }
 
   loginForm = new FormGroup({
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.auth.login(this.loginForm.value).subscribe(
         (result) =>{
-          this.router.navigate(['admin']);
+          this.route.navigate(['/admin']);
         },
         (reject: Error) =>{
           alert(reject.message);

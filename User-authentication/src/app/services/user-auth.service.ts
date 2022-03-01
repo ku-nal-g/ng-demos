@@ -29,6 +29,6 @@ export class UserAuthService {
       this.setToken('qwertyuiop');
       return of({ name: 'Kunal Gupta', email: 'kunal@gmail.com' });
     }
-    return throwError(new Error('You are not allowed to view this page. You are redirected to login Page'));
+      return throwError(new Error('You are not allowed to view this page. You are redirected to login Page'));    
   }
 }
