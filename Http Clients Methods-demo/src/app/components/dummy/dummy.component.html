@@ -1,0 +1,26 @@
+<h2>Calling base service file through different service file in another component</h2>
+
+<div class="parent-div">
+    <div class="child-div">
+      <h3 style="text-align: center">Get() Method of Http Client</h3>
+      <div *ngIf="apiData">
+        <table id="userPosts">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let posts of apiData">
+              <td>{{ posts.id }}</td>
+              <td>{{ posts.title }}</td>
+              <td>{{ posts.path }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+

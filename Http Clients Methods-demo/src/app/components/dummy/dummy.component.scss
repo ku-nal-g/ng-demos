@@ -1,0 +1,48 @@
+h2{
+    text-align: center;
+}
+.parent-div{
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    margin-bottom: 3%;
+}
+.child-div{
+    padding: 1%;
+}
+#userPosts {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #userPosts td, #userPosts th {
+    border: 1px solid rgb(236, 223, 223);
+    padding: 20px;
+  }
+  #userPosts tr:nth-child(even){background-color: #f2f2f2;}
+
+  #userPosts tr:hover {background-color: #ddd;}
+
+  #userPosts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2cb6c9;
+    color: white;
+  }
+  .btn-design{
+      margin-bottom: 1%;
+  }
+  .btn-design button{
+      padding: 1%;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: black;
+      color: white;
+  }
+  .btn-design button:hover{
+    color: black;
+    background-color: white;
+  } 
