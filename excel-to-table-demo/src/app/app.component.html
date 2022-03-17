@@ -1,0 +1,33 @@
+<div class="mb-2 input-div">
+  <input class="form-control" type="file" id="formFile" (change)="onFileChange($event)">
+</div>
+
+<div class="btn-design">
+  <button type="button" class="btn btn-outline-dark" (click)="logData()">Import</button>
+</div>
+
+<div *ngIf="show" class="parent-div">
+  <div class="child-div" style="overflow-x: auto;">
+    <table id="users">
+      <thead>
+        <tr>
+          <th *ngFor="let header of exceltoJson.headers.header1">{{header| titlecase}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of exceltoJson.sheet1">
+          <td>{{data.athlete | titlecase}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.country}}</td>
+          <td>{{data.year}}</td>
+          <td>{{data.date}}</td>
+          <td>{{data.sport}}</td>
+          <td>{{data.gold}}</td>
+          <td>{{data.silver}}</td>
+          <td>{{data.bronze}}</td>
+          <td>{{data.total}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
