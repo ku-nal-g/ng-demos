@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({});
 
-  constructor(private Fb: FormBuilder, private auth: AuthService,private route:Router) { }
+  constructor(private Fb: FormBuilder, private auth: AuthService,private route:Router,private toaster:ToastrService) { }
 
   emailField = true;
 
@@ -51,13 +52,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
       this.auth.login(this.loginForm.value).subscribe(
         (res) => {
           this.route.navigate(['../table-data']);
         },
         (reject: Error) => {
-          alert(reject.message);
+          this.toaster.error(reject.message);
         }
       )
     }
