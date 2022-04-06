@@ -1,0 +1,40 @@
+<div class="parent-div">
+  <div class="form-div">
+    <h3 style="text-align: center; text-decoration: underline;" class="text-light">Login</h3>
+    <form [formGroup]="loginForm">
+      <div *ngIf="emailField" class="form-group mb-2">
+        <span>
+          <label for="exampleInputEmail1">Email address:</label>
+          <span style="margin-left: 85%;"><i class="fa-solid fa-calendar text-light" (click)="showDob()"></i></span>
+        </span>
+        <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Enter email">
+      </div>
+
+      <div *ngIf="!emailField" class="form-group mb-2">
+        <span>
+          <label for="exampleInputEmail1">D.O.B:</label>
+          <span style="margin-left: 92%;"> <i class="fa-solid fa-envelope text-light" (click)="showEmail()"></i></span>
+        </span>
+        <input type="date"  [max]="changeDateForm()" class="form-control" formControlName="dateOfBirth">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="exampleInputPassword1">Password:</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+        <span class="text-danger" *ngIf="password && password.touched && password.hasError('required')">Password is
+          Required</span>
+      </div>
+
+      <div class="d-grid gap-2 col-12 mx-auto">
+        <button class="btn text-light"type="button" (click)="onSubmit()"> Login</button>
+    </div>
+
+    <div class="text-div" style="margin-top: 5%;">
+      <span style="margin-left: 34%;">
+        <span class="text-primary">Don't Have Acoount</span>
+        <a class="text-light" style="text-decoration: none;" routerLink="../sign-up" style="text-decoration: underline">Create Account</a>
+      </span>
+    </div>
+    </form>
+  </div>
+</div>

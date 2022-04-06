@@ -1,0 +1,333 @@
+<div class="parent-div">
+    <div class="child-div">
+        <h2 style="text-align: center; text-decoration: underline" class="text-light">
+            Sign Up
+        </h2>
+        <form class="row g-3 mt-2" [formGroup]="signUp">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">First Name <span
+                        class="text-danger asterisk">*</span></label>
+                <input [class.is-invalid]="firstName?.touched && firstName?.invalid" type="text" class="form-control"
+                    formControlName="firstName" />
+                <span class="text-danger"
+                    *ngIf="(firstName?.dirty || firstName?.touched) && firstName?.invalid && firstName?.hasError('required')">
+                    First Name is required.
+                </span>
+                <span class="text-danger"
+                    *ngIf="(firstName?.dirty || firstName?.touched) && firstName?.invalid && firstName?.hasError('pattern')">Please
+                    inform your valid First Name</span>
+            </div>
+
+            <div class="col-md-6 mb-1">
+                <label for="inputPassword4" class="form-label">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" />
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">D.O.B <span class="text-danger">*</span></label>
+                <input type="date" [max]="changeDateForm()" class="form-control" formControlName="dateOfBirth" />
+                <span class="text-danger"
+                    *ngIf="(dateOfBirth?.dirty || dateOfBirth?.touched) && dateOfBirth?.invalid && dateOfBirth?.hasError('required')">
+                    Date of Birth is Required.
+                </span>
+            </div>
+
+            <div class="col-md-4">
+                <label for="inputEmail4" class="form-label">Email <span class="text-danger">*</span></label>
+                <input [class.is-invalid]="email?.touched && email?.invalid" type="email" class="form-control"
+                    formControlName="email" />
+                <span class="text-danger"
+                    *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.hasError('required')">
+                    Email Address is required.
+                </span>
+                <span class="text-danger"
+                    *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.hasError('pattern')">Please
+                    inform your valid E-mail address</span>
+            </div>
+
+            <div class="col-md-4">
+                <span>
+                    <label for="inputPassword4" [class.is-invalid]="password?.touched && password?.invalid"
+                        class="form-label password">Password <span class="text-danger">*</span></label>
+                    <span class="eye-btn"><i (click)="showPassword()" class="fa-solid fa-eye text-white"></i></span>
+                </span>
+                <input [value]="show ? originalPassword: replacedPassword " class="form-control"
+                    (input)="changePassword($event)" formControlName="password" />
+                    <span class="text-danger"
+                    *ngIf="(password?.dirty || password?.touched) && password?.invalid && password?.hasError('required')">
+                    Password  is required.
+                </span>
+                <span class="text-danger"
+                    *ngIf="(password?.dirty || password?.touched) && password?.invalid && password?.hasError('pattern')">Please
+                    inform your valid Password.</span>
+            </div>
+
+            <div class="col-md-4">
+                <span>
+                    <label for="inputPassword4" class="form-label confirm">Confirm Password</label>
+                    <span class="eye-btn2">
+                        <i (click)="showConfirmPassword()" class="fa-solid fa-eye text-light"></i>
+                    </span>
+                </span>
+                <input [value]="showConfirm ? originalConfirmPassword : replacedConfirmPassword" class="form-control"
+                    (input)="changeConfirmPassword($event)" formControlName="confirmPassword" />
+                <span class="text-danger" *ngIf="
+            f['confirmPassword'].errors &&
+            f['confirmPassword'].errors['confirmedValidator']
+          ">
+                    Please inform your confirm password same as your password
+                </span>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address Line1 <span class="text-danger">*</span></label>
+                <input type="text" [class.is-invalid]="addressLine1?.touched && addressLine1?.invalid"
+                    class="form-control" placeholder="1234 Main St" formControlName="addressLine1" />
+                <span class="text-danger"
+                    *ngIf="(addressLine1?.dirty || addressLine1?.touched) && addressLine1?.invalid && addressLine1?.hasError('required')">
+                    Address Line1 is required.
+                </span>
+                <span class="text-danger"
+                    *ngIf="(addressLine1?.dirty || addressLine1?.touched) && addressLine1?.invalid && addressLine1?.hasError('pattern')">Please
+                    inform your valid Adress Line1</span>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address Line2</label>
+                <input type="text" class="form-control" placeholder="Apartment, studio, or floor"
+                    formControlName="addressLine2" />
+            </div>
+
+            <div class="col-md-3">
+                <label for="inputCountry" class="form-label">Country</label>
+                <select class="form-select" formControlName="country" (change)="onCountryChange($event)">
+                    <option selected value="">--Select Country--</option>
+                    <option [value]="country.name" *ngFor="let country of contries">
+                        {{country.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label for="inputState" class="form-label">State</label>
+                <select class="form-select" formControlName="state" (change)="onStateChange($event)">
+                    <option selected value="">--Select State--</option>
+                    <option [value]="state.name" *ngFor="let state of states">
+                        {{state.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label for="inputCity" class="form-label">City</label>
+                <select class="form-select" formControlName="city">
+                    <option selected value="">--Select City--</option>
+                    <option [value]="city.name" *ngFor="let city of cities">
+                        {{city.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label for="inputZip" class="form-label">PinCode</label>
+                <input [class.is-invalid]="pincode?.touched && pincode?.invalid" type="number" class="form-control"
+                    id="inputZip" formControlName="pincode" />
+                <span class="text-danger"
+                    *ngIf="(pincode?.dirty || pincode?.touched) && pincode?.invalid && pincode?.hasError('pattern')">Please
+                    inform your valid 6 digit Pincode</span>
+            </div>
+
+            <div class="d-grid gap-2 col-12 mx-auto">
+                <button class="btn text-light" data-toggle="modal"
+                    data-target="#exampleModal" (click)="patchFormValue()" type="button"> 
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div class="text-div">
+            <span class="me-1 text-light">Already have an Account</span>
+            <span><a routerLink="/login" style="text-decoration: underline;">Login</a></span>
+        </div>
+    </div>
+</div>
+
+<!-- Modal using Bootstrap -->
+
+<!--unordered list if edit is not prsessed-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="padding: 1%;">
+            <div class="modal-header" style="border-bottom: 1px solid #ddd;">
+                <h5 class="modal-title" id="exampleModalLabel">Form Data</h5>
+                <button type="button" class="close text-light" (click)="crossBtn()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div *ngIf="isEdit" class="modal-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Full Name : &nbsp;{{ this.signUp.get("firstName")?.value }} {{this.signUp.get('lastName')?.value}}
+                    </li>
+                    <li class="list-group-item">
+                        D.O.B : &nbsp;{{ this.signUp.get("dateOfBirth")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        E-mail : &nbsp;{{ this.signUp.get("email")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        Address Line1 : &nbsp;{{ this.signUp.get("addressLine1")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        Address Line2 : &nbsp;{{ this.signUp.get("addressLine2")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        Country : &nbsp;{{ this.signUp.get("country")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        State : &nbsp;{{ this.signUp.get("state")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        City : &nbsp;{{ this.signUp.get("city")?.value }}
+                    </li>
+                    <li class="list-group-item">
+                        Pincode : &nbsp;{{ this.signUp.get("pincode")?.value }}
+                    </li>
+                </ul>
+            </div>
+
+            <!--If Edit is pressed show form modal data to editable form -->
+
+            <div *ngIf="!isEdit" class="modal-body">
+                <div class="form-div">
+                    <form class="edit-form" [formGroup]="editForm">
+                        <div *ngIf="showFirstAndLast" class="form-group mb-2 mt-2">
+                            <label for="exampleInputEmail1">Full Name</label>
+                            <span class="pencil"><i (click)="displayFirstAndLast()"
+                                    class="fa-solid fa-pencil"></i></span>
+                        </div>
+
+                        <div *ngIf="!showFirstAndLast" class="form-group mt-2 mb-2">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control"
+                                formControlName="fname">
+                            <span class="text-danger"
+                                *ngIf="(fname?.dirty || fname?.touched) && fname?.invalid && fname?.hasError('required')">
+                                First Name is required.
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(fname?.dirty || fname?.touched) && fname?.invalid && fname?.hasError('pattern')">Please
+                                inform your valid First Name</span>
+                        </div>
+
+                        <div *ngIf="!showFirstAndLast" class="form-group mb-2">
+                            <label for="lastName">Last Name</label>
+                            <input type="text"  class="form-control"
+                                formControlName="lname">
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <label for="inputAddress" class="form-label">D.O.B</label>
+                            <input type="date" [max]="changeDateForm()" class="form-control"
+                                 formControlName="dob" />
+                            <span class="text-danger"
+                                *ngIf="(dob?.dirty || dob?.touched) && dob?.invalid && dob?.hasError('required')">
+                                Date of Birth is Required.
+                            </span>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input [class.is-invalid]="userEmail?.touched && userEmail?.invalid" type="email" [value]="this.signUp.get('email')?.value" class="form-control"
+                            formControlName="userEmail" />
+                            <span class="text-danger"
+                                *ngIf="(userEmail?.dirty || userEmail?.touched) && userEmail?.invalid && userEmail?.hasError('required')">
+                                Email Address is required.
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(userEmail?.dirty || userEmail?.touched) && userEmail?.invalid && userEmail?.hasError('pattern')">Please
+                                inform your valid E-mail address</span>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputAddress" class="form-label">Address Line1</label>
+                            <input type="text" [class.is-invalid]="userAddressLine1?.touched && userAddressLine1?.invalid"
+                                class="form-control" placeholder="1234 Main St" formControlName="userAddressLine1" />
+                            <span class="text-danger"
+                                *ngIf="(userAddressLine1?.dirty || userAddressLine1?.touched) && userAddressLine1?.invalid && userAddressLine1?.hasError('required')">
+                                Address Line1 is required.
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(userAddressLine1?.dirty || userAddressLine1?.touched) && userAddressLine1?.invalid && userAddressLine1?.hasError('pattern')">Please
+                                inform your valid Adress Line1</span>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputAddress2" class="form-label">Address Line2</label>
+                            <input type="text" class="form-control" placeholder="Apartment, studio, or floor" formControlName="userAddressLine2" />
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputCountry" class="form-label">Country</label>
+                            <select class="form-select" formControlName="userCountry" (change)="onCntryChanged($event)">
+                                <option selected value="">--Choose Country--</option>
+                                <option [value]="country.name" *ngFor="let country of contries_name">
+                                    {{ country.name }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputState" class="form-label">State</label>
+                            <select class="form-select" formControlName="userState" (change)="onStateChanged($event)">
+                                <option selected value="">--Choose State--</option>
+                                <ng-container *ngIf="!states_name">
+                                    <option [value]="signUp.value.state">{{signUp.value.state}}</option>
+                                </ng-container>
+                                <option [value]="state.name" *ngFor="let state of states_name">
+                                    {{ state.name }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label for="inputCity" class="form-label">City</label>
+                            <select class="form-select" formControlName="userCity">
+                                <option selected value="">--Choose City--</option>
+                                <ng-container *ngIf="!cities_name">
+                                    <option [value]="signUp.value.city">{{signUp.value.city}}</option>
+                                </ng-container>
+                                <option [value]="city.name" *ngFor="let city of cities_name">
+                                    {{ city.name }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label  class="form-label">Pin Code</label>
+                            <input type="number" class="form-control" formControlName="userPincode"/>
+                            <span class="text-danger"
+                                *ngIf="( userPinCode?.dirty ||  userPinCode?.touched) &&  userPinCode?.invalid &&  userPinCode?.hasError('pattern')">Please
+                                inform your valid 6 digit Pincode</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" (click)="setFormDataToStorage()" class="btn btn-primary" data-dismiss="modal"
+                    aria-label="Close">
+                    Confirm
+                </button>
+                <button *ngIf="isEdit" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#formModal" (click)="formEditable()">Edit</button>
+                <button type="button" (click)="resetForm()" class="btn btn-secondary" data-dismiss="modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

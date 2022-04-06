@@ -1,0 +1,40 @@
+.parent-div{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-top: 2%;
+    padding: 1%;
+    margin-left: 25%;
+}
+.logout{
+    margin-top: 1%;
+    margin-left: 88%;
+}
+#user {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #user td, #user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 18px;
+  }
+  
+  #user tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #user tr:hover {background-color: #ddd;}
+  
+  #user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #bb8ef5;
+    color: white;
+  }
+  .table-div{
+      width: 80%;
+      margin-left: 12%;
+      margin-top: 2%;
+  }
