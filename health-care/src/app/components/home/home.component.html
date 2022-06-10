@@ -1,0 +1,129 @@
+<!-- <app-top-nav-bar></app-top-nav-bar> -->
+
+<!-- <app-sidenav></app-sidenav> -->
+
+<h1 style="text-align: center;">Welcome to Home Page</h1>
+
+
+<!-- 
+ Get() 
+
+<div class="parent-div">
+    <div class="child-div">
+      <h3 style="text-align: center">Get() Method of Http Client</h3>
+      <div *ngIf="userPosts">
+        <table id="userPosts">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let posts of userPosts">
+              <td>{{ posts.id }}</td>
+              <td>{{ posts.title }}</td>
+              <td>{{ posts.path }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+   POST()
+  
+  <div class="parent-div">
+    <div class="child-div">
+      <h3>Post() Method of Http Client</h3>
+      <div *ngIf="isPostAdded" class="bg-success text-light p-2">Post Added Successfully</div>
+      <div class="form-design">
+        <form #post="ngForm" (ngSubmit)="addPost(post)">
+          <div class="title-div mt-3">
+            <label for="title" class="form-group">Title:</label><br>
+            <input type="text" class="form-control" name="title" ngModel/>
+          </div>
+          <div class="url-div mt-3">
+            <label for="path" class="form-group">Path:</label><br>
+            <input type="url" class="form-control" name="path" ngModel/>
+          </div>
+          <div class="button-div mt-3">
+            <button class="btn btn-dark">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  Put()
+  
+  <div class="parent-div">
+      <div class="child-div">
+        <h3>Put() Method of Http Client</h3>
+        <div *ngIf="isPostUpdated" class="bg-success text-light p-2">Post Updated Successfully</div>
+        <div class="form-design">
+          <form #put="ngForm" (ngSubmit)="updatePost(put)">
+              <div class="id-div mt-3">
+                  <label for="id" class="form-group">Id:</label><br>
+                  <input type="number" class="form-control" name="id" ngModel/>
+                </div>
+            <div class="title-div mt-3">
+              <label for="title" class="form-group">Title:</label><br>
+              <input type="text" class="form-control" name="title" ngModel/>
+            </div>
+            <div class="url-div mt-3">
+              <label for="path" class="form-group">Path:</label><br>
+              <input type="url" class="form-control" name="path" ngModel/>
+            </div>
+            <div class="button-div mt-3">
+              <button class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    Delete()
+  
+    <div class="parent-div">
+      <div class="child-div">
+        <h3>Delete() Method of Http Client</h3>
+        <div *ngIf="isDeleted" class="bg-success text-light p-2">Post deleted Successfully</div>
+        <div class="form-design">
+          <form #del="ngForm" (ngSubmit)="deletePost(del)">
+              <div class="id-div mt-3">
+                  <label for="id" class="form-group">Id:</label><br>
+                  <input type="number" class="form-control" name="id" ngModel/>
+                </div>
+            <div class="button-div mt-3">
+              <button class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    Patch()
+  
+    <div class="parent-div">
+      <div class="child-div">
+        <h3>Patch() Method of Http Client</h3>
+        <div *ngIf="isPatched" class="bg-success text-light p-2">Post Patched Successfully</div>
+        <div class="form-design">
+          <form #patch="ngForm" (ngSubmit)="patchedPosts(patch)">
+              <div class="id-div mt-3">
+                  <label for="id" class="form-group">Id:</label><br>
+                  <input type="number" class="form-control" name="id" ngModel/>
+                </div>
+                <div class="title-div mt-3">
+                  <label for="title" class="form-group">Title:</label><br>
+                  <input type="text" class="form-control" name="title" ngModel/>
+                </div>
+            <div class="button-div mt-3">
+              <button class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>  -->

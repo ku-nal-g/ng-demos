@@ -1,0 +1,76 @@
+
+    
+.heartIcon{
+    font-size: 40px;
+    }
+    
+    .search{
+        font-size: 20px;
+    }
+    
+    input[type=text] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+    
+    .bell{
+        font-size: 35px;
+        display: flex;
+        align-items: center;
+    }
+
+    .parent-bell{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .parent-button{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .parent-search{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .parent-input{
+        display: flex;
+        align-items: center; 
+    }
+
+    input[type=text]:focus{
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+
+    .heartIcon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hospitalName{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        // margin-top: 2px;
+    }
+
+    .parent-profile{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .container-fluid{
+    width: 100%;
+    border: 1px saddlebrown;
+    background-color: #f8f9fa;
+    padding: 10px;
+}

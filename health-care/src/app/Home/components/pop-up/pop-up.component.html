@@ -1,0 +1,28 @@
+<div class="header">
+    <p>User Info</p>
+</div>
+
+<div class="table-div" style="overflow-x:auto;">
+    <table id="users">
+        <tr>
+            <th *ngFor="let data of headerData">{{data}}</th>
+        </tr>
+        <tr>
+            <td>{{userName}}</td>
+            <td>{{userEmail}}</td>
+            <td><span class="role-text"
+                    [ngStyle]="{'background' : userRole === 'LPN'? '#82E652': userRole === 'LVN' ? 'red': userRole ==='RN'? '#60E5DD': 'yellow'}">{{userRole}}</span>
+            </td>
+            <td>{{userVisibility}}</td>
+            <td>{{userNumber}}</td>
+            <td>{{userCity}}</td>
+            <td>{{userActions}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer">
+    <div class="btn-design" mat-dialog-actions>
+        <button class="button-close" mat-flat-button color="primary" [mat-dialog-close] cdkFocusInitial>Ok</button>
+    </div>
+</div>

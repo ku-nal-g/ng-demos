@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <div class="sidebar">
+            <a routerLinkActive="auth/home"><span class="mr-right"><i class="fa-solid fa-house fa-lg"></i></span>Home</a>
+            <!-- <a routerLinkActive="#"><span class="mr-right"><i class="fa-solid fa-list-check fa-lg"></i></span>
+                Tasks</a>
+            <a routerLinkActive="#"><span class="mr-right"><i class="fa-solid fa-file fa-lg"></i></span>Files</a>
+            <a routerLinkActive="#"><span class="mr-right"><i
+                        class="fa-solid fa-location-dot fa-lg"></i></span>Patients</a>
+            <a routerLinkActive="#"><span class="mr-right"><i
+                        class="fa-solid fa-table-list fa-lg"></i></span>Reports</a>
+            <a routerLinkActive="#"><span class="mr-right"><i
+     class="fa-solid fa-box-archive fa-lg"></i></span>Archive</a> -->
+        </div>
+        <router-outlet></router-outlet>
+
+        <div class="sidebar-div">
+            <a routerLink="#"><span class="mr-right"><i class="fa-solid fa-sliders fa-lg"></i></span>Settings</a>
+        </div>
+    </mat-sidenav>
+</mat-sidenav-container>

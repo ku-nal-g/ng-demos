@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\Common",
+    "\\src\\app\\Common\\components",
+    "\\src\\app\\Common\\top-nav-bar",
+    "\\src\\app\\Guard"
+  ],
+  "SelectedNode": "\\src\\app\\Common\\top-nav-bar\\top-nav-bar.component.scss",
+  "PreviewInSolutionExplorer": false
+}

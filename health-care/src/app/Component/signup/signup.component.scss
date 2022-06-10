@@ -1,0 +1,74 @@
+.parent-body{
+  border: 1px solid saddlebrown;
+  width: 100%;
+  height: 950px;
+  background-color: antiquewhite;
+}
+
+.child-conatainer{
+  width: 411px;
+}
+
+.login{
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  margin-right: 30vw;
+  position: relative;
+  top: 50px;
+  font-size: 35px;
+}
+
+.parent-conatainer{
+  margin-left: 10vw;
+  width: 80%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 40px;
+}
+
+@media screen and (min-width: 1280px) {
+  .child-conatainer {
+    width: 60%;
+    border: 1px solid black;
+    
+  }}
+
+  .ParentBtn{
+    // border: 1px solid black;
+    float: right;
+    margin-top: 4vw;
+  }
+ 
+  .Parent1Btn{
+    // border: 1px solid black;
+    float: right;
+
+  }
+
+  @media screen and (min-width: 1280px){
+  .parent-review{
+    // border: 1px solid black;
+    width: 50%;
+    display: inherit;
+    margin-left: 13vw;
+    position: relative;
+    bottom: 11vw;
+  }
+  }
+
+  .reviewName{
+    margin: auto 10px;
+    display: inline-block;
+    font-size: 18px;
+    }
+
+  .parent-review{
+    padding-top: 20px;
+  }

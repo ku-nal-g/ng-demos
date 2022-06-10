@@ -1,0 +1,75 @@
+@import "~ngx-toastr/toastr";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+html,
+body {
+  height: 100%;
+}
+.mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition {
+  opacity: 1 !important;
+  color: blue;
+}
+/* Hide the default sort arrow display: */
+.mat-sort-header-stem {
+  display: none !important;
+}
+.mat-sort-header-pointer-left,
+.mat-sort-header-pointer-right {
+  display: none !important;
+}
+.mat-sort-header-pointer-middle {
+  width: 0px !important;
+  height: 0px !important;
+}
+/* show two carets on top of each other when not sorted takes place: */
+.mat-sort-header-arrow {
+  .mat-sort-header-indicator {
+    &::before {
+      content: "<>";
+      position: absolute;
+      opacity: 1 !important;
+      color: rgba(0, 0, 0, 0.5) !important;
+      font-size: 1em;
+      font-weight: 500;
+      transform: translate(-10%, 20%) rotate(90deg) !important;
+    }
+  }
+}
+
+/* show ascending caret when sorted ascending:*/
+[aria-sort="ascending"] {
+  .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: "<";
+        position: absolute;
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+        font-size: 1em;
+        font-weight: 500;
+        transform: translate(0, 0) rotate(90deg) !important;
+      }
+    }
+  }
+}
+
+/* show descending caret when sorted descending: */
+[aria-sort="descending"] {
+  .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: ">";
+        position: absolute;
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+        font-size: 1em;
+        font-weight: 500;
+        transform: translate(0, -10%) rotate(90deg) !important;
+      }
+    }
+  }
+}
+
+.mat-paginator-outer-container .mat-paginator-container {
+  justify-content: left;
+}
